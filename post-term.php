@@ -1,6 +1,6 @@
 <?php
 /**
- * Set or explore post term associations
+ * Manage post term associations
  *
  * @author Felipe Lavín Z. <felipe@yukei.net>
  */
