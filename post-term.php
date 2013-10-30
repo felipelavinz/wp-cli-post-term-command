@@ -39,7 +39,7 @@ class Post_Term extends \WP_CLI_Command{
 		if ( \is_wp_error($success) ) {
 			WP_CLI::warning( $success->get_error_mesage() );
 		} else {
-			WP_CLI::success("Term $term successfully added to post ID $post_id");
+			WP_CLI::success("$taxonomy $term successfully added to post ID $post_id");
 		}
 
 	}
@@ -96,15 +96,15 @@ class Post_Term extends \WP_CLI_Command{
 				if ( \is_wp_error($update) ) {
 					WP_CLI::error( $update->get_error_message() );
 				} elseif ( is_string($update) ) {
-					WP_CLI::error("Term $update could not be added to the post");
+					WP_CLI::error("$taxonomy $update could not be added to the post");
 				} else {
-					WP_CLI::success("Term $term removed from post $post_id");
+					WP_CLI::success("$taxonomy $term removed from post $post_id");
 				}
 				return;
 				break;
 			case 0:
 				// no terms less
-				WP_CLI::warning("Term $term was not associated to post $post_id");
+				WP_CLI::warning("$taxonomy $term was not associated to post $post_id");
 				return;
 				break;
 			default:
