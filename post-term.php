@@ -119,10 +119,14 @@ class Post_Term extends \WP_CLI_Command{
 	 * Unlink the object from the taxonomy
 	 *
 	 * @synopsis <id> <taxonomy>
-	 * @todo
 	 */
 	public function delete( $args, $assoc_args ){
-
+		list( $post_id, $taxonomy ) = $args;
+		$post_id = absint( $post_id );
+		$post = \get_post($post_id);
+		WP_CLI::confirm( "Sure you want to remove all $taxonomy terms from \"{$post->post_title}\" [ID: $post_id]?");
+		\wp_delete_object_term_relationships( absint($post_id), $taxonomy );
+		WP_CLI::success("All $taxonomy terms where removed from post $post_id");
 	}
 
 	/**
