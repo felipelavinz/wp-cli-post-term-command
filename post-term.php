@@ -2,6 +2,11 @@
 /**
  * Manage post term associations
  *
+ * ## EXAMPLES
+ *
+ * 	wp post-term add 22 post_tag --slug=lorem-ipsum
+ * 	wp post-term get 83 category --format=json
+ *
  * @author Felipe Lavín Z. <felipe@yukei.net>
  */
 class Post_Term extends \WP_CLI_Command{
