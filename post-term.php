@@ -147,14 +147,6 @@ class Post_Term extends \WP_CLI_Command{
 		}
 	}
 
-	/**
-	 * Update the terms associations for a post
-	 * @todo
-	 */
-	public function update( $args, $assoc_args ){
-
-	}
-
 }
 
 WP_CLI::add_command( 'post-term', 'Post_Term' );
